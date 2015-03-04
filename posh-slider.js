@@ -11,7 +11,8 @@ $(document).ready(function(){
 		$(wrapper).attr('rel' , c);
 		t = $(".js_block").length
 		active = true;
-		$('*[data-js_block="1"').addClass(activeClass);
+		//$('*[data-js_block="1"').addClass(activeClass);
+		$(".js_block").first().addClass(activeClass);
 
 
 		$('.js_block_item_2').hide();
@@ -79,7 +80,7 @@ $(document).ready(function(){
 			var index = index.replace( '.js_block_item_' , '');
 			$('.js_block').removeClass(activeClass);
 
-			$('*[data-js_block="'+index+'"').addClass(activeClass);
+			$('*[data-js_block="'+index+'\"]').addClass(activeClass);
 		}
 
 
