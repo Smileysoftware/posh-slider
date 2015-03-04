@@ -11,14 +11,14 @@ $(document).ready(function(){
 		$(wrapper).attr('rel' , c);
 		t = $(".js_block").length
 		active = true;
-		//$('*[data-js_block="1"').addClass(activeClass);
 		$(".js_block").first().addClass(activeClass);
 
 
-		$('.js_block_item_2').hide();
-		$('.js_block_item_3').hide();
+		// $('.js_block_item_2').hide();
+		// $('.js_block_item_3').hide();
+		$('.js_block_item:not(:first)').hide();
 
-		$('a.js_block').mouseenter(function(){
+		$('a.js_block').hover(function(){
 
 			var w = $(this).data('js_block');
 			var i = '.js_block_item_' + w;
@@ -34,15 +34,16 @@ $(document).ready(function(){
 			}
 			active = false;
 
-		}).mouseout(function(){
+		}, function() { 
 			active = true;
 		});
 
-		$(wrapper).mouseover(function() {
+		$(wrapper).hover(function() {
 		    active = false;
-		  })
-		  .mouseout(function() {
+		    
+		  }, function() {
 		    active = true;
+		    
 		  });
 
 		window.setInterval(function(){
